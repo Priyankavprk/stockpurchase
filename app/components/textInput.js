@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 import { StyleSheet, View, Text, Button, TextInput } from 'react-native';
 
-class ScreenTwo extends Component {
+class TextField extends Component {
  render() {
    return (
      <View style={styles.Container}>
@@ -23,4 +23,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default ScreenTwo;
+export default TextField;
