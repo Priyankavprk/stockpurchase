@@ -6,12 +6,13 @@ import GridView from '../components/gridView';
 
 class HomeScreen extends Component {
  static navigationOptions = {
-      title: "Stock Overview - June"
+      title: "Stock Overview"
  }
  render() {
    return (
       <ScrollView>
-        <GridView />
+        <GridView navigation={this.props.navigation}/>
+        <Button title= 'go'onPress={() => this.props.navigation.navigate('ScreenTwo')} />
       </ScrollView>
    );
  }

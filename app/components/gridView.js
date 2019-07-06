@@ -15,7 +15,7 @@ class gridView extends Component {
       <View style={styles.MainContainer}>
         <FlatList
           data={this.props.items}
-          renderItem={({item}) => <GridItem item={item}/>}
+          renderItem={({item}) => <GridItem item={item} navigation={this.props.navigation}/>}
           numColumns={3}
         />
       </View>
