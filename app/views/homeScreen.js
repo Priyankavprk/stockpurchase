@@ -6,7 +6,7 @@ import GridView from '../components/gridView';
 
 class HomeScreen extends Component {
  static navigationOptions = {
-      title: "Stock Overview"
+      title: "Stock Overview - June"
  }
  render() {
    return (
