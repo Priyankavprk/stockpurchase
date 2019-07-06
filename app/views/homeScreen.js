@@ -3,6 +3,9 @@ import React, {Component} from 'react';
 import { StyleSheet, ScrollView, View, Text, Button } from 'react-native';
 
 class HomeScreen extends Component {
+ static navigationOptions = {
+      title: "Stock Overview"
+ }
  render() {
    return (
       <View>
@@ -13,7 +16,7 @@ class HomeScreen extends Component {
 };
 
 const styles = StyleSheet.create({
-  
+
 });
 
 export default HomeScreen;
