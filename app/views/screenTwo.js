@@ -6,12 +6,12 @@ import TextField from '../components/textInput';
 
 class ScreenTwo extends Component {
  static navigationOptions = {
-     title: "Stock Price"
+     title: "Stock Price",
  }
  render() {
    return (
      <View style={styles.container}>
-        <TextField />
+        <TextField data={this.props.navigation.state.params.data.stockPrice}/>
      </View>
    );
  }
