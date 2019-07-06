@@ -14,7 +14,7 @@ class Graph extends Component {
                 style={styles.GraphStyle}
                 data={ data }
                 showGrid = { false }
-                svg={{ stroke: 'rgb(134, 65, 244)' }}
+                svg={{ stroke: '#00BCD4' }}
                 contentInset={{ top: 20, bottom: 20 }}
             >
                 <Grid/>
