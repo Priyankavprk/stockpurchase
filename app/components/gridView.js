@@ -28,7 +28,17 @@ class gridView extends Component {
      {key: 'Seventeen'},
      {key: 'Eighteen'},
      {key: 'Nineteen'},
-     {key: 'Twenty'}
+     {key: 'Twenty'},
+     {key: 'Twenty one'},
+     {key: 'Twenty two'},
+     {key: 'Twenty three'},
+     {key: 'Twenty four'},
+     {key: 'Twenty five'},
+     {key: 'Twenty six'},
+     {key: 'Twenty seven'},
+     {key: 'Twenty eight'},
+     {key: 'Twenty nine'},
+     {key: 'Thirty'}
    ]}
   }
 
@@ -49,21 +59,7 @@ const styles = StyleSheet.create({
   MainContainer :{
    justifyContent: 'center',
    margin: 10,
-},
-GridViewBlockStyle: {
-  justifyContent: 'center',
-  flex:1,
-  alignItems: 'center',
-  height: 100,
-  margin: 5,
-  backgroundColor: '#00BCD4'
-},
-GridViewInsideTextItemStyle: {
-   color: '#fff',
-   padding: 10,
-   fontSize: 18,
-   justifyContent: 'center',
- }
+  }
 });
 
 export default gridView;
