@@ -2,11 +2,16 @@
 import React, {Component} from 'react';
 import { StyleSheet, View, Text, Button } from 'react-native';
 
+import TextField from '../components/textInput';
+
 class ScreenTwo extends Component {
+ static navigationOptions = {
+     title: "Stock Price"
+ }
  render() {
    return (
      <View style={styles.container}>
-        <Text>Stock Price</Text>
+        <TextField />
      </View>
    );
  }
