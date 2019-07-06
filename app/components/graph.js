@@ -13,7 +13,7 @@ class Graph extends Component {
             <LineChart
                 style={styles.GraphStyle}
                 data={ data }
-                showGrid={ false }
+                showGrid = { false }
                 svg={{ stroke: 'rgb(134, 65, 244)' }}
                 contentInset={{ top: 20, bottom: 20 }}
             >
