@@ -1,8 +1,13 @@
 
 import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, FlatList, Text, View, Alert, Platform } from 'react-native';
+import PropTypes from 'prop-types';
 
 class gridItem extends Component {
+  static propTypes = {
+    item: PropTypes.object
+  }
+  
   render() {
     return (
       <View style={styles.GridViewBlockStyle}>
