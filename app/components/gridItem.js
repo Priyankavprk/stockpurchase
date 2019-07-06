@@ -15,10 +15,14 @@ class gridItem extends Component {
         <Text style={styles.GridViewInsideTextItemStyle}> {this.props.item.key} </Text>
         <Text style={styles.GridPrice}> {this.props.item.stockPrice ? this.props.item.stockPrice : ''} </Text>
        </View>
-        <TouchableOpacity style={styles.GridViewOptions} onPress={() => this.props.navigation.navigate('ScreenTwo', {data: this.props.item})}>
-          <Text style={{color: '#fff'}}> {this.props.item.stockPrice ? 'Delete' : ''} </Text>
-          <Text style={{color: '#fff'}}> {this.props.item.stockPrice ? 'Update' : 'Add'} </Text>
+       <View style={styles.GridViewOptions}>
+        <TouchableOpacity  onPress={() => this.props.navigation.navigate('ScreenTwo', {data: this.props.item})}>
+          <Text style={{color: '#fff', fontSize: 30}}> {this.props.item.stockPrice ? '-' : ''} </Text>
         </TouchableOpacity>
+        <TouchableOpacity  onPress={() => this.props.navigation.navigate('ScreenTwo', {data: this.props.item})}>
+          <Text style={{color: '#fff', fontSize: 30}}> + </Text>
+        </TouchableOpacity>
+       </View>
       </View>
     )
   }
