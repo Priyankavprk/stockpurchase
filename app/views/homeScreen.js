@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import { StyleSheet, ScrollView, View, Text, Button } from 'react-native';
 
 import GridView from '../components/gridView';
+import Graph from '../components/graph';
 
 class HomeScreen extends Component {
  static navigationOptions = {
@@ -12,7 +13,7 @@ class HomeScreen extends Component {
    return (
       <ScrollView>
         <GridView navigation={this.props.navigation}/>
-        <Button title= 'go'onPress={() => this.props.navigation.navigate('ScreenTwo')} />
+        <Graph />
       </ScrollView>
    );
  }
