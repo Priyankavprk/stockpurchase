@@ -6,7 +6,7 @@ import ScreenTwo from './views/screenTwo';
 
 const App = createStackNavigator({
     HomeScreen: { screen: HomeScreen },
-    ScreenTwo: { screen: ScreenTwo},
+    ScreenTwo: { screen: ScreenTwo}
 },
 {
     initialRouteName: "HomeScreen"
