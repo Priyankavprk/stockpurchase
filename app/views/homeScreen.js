@@ -10,11 +10,9 @@ class HomeScreen extends Component {
  }
  render() {
    return (
-      <View>
+      <ScrollView>
         <GridView />
-        <Text>hai</Text>
-        <Button title='Click me' onPress={() => this.props.navigation.navigate('ScreenTwo')}/>
-      </View>
+      </ScrollView>
    );
  }
 };
