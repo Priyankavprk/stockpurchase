@@ -1,6 +1,6 @@
 const initialState = {
   items: [
-   {key: '1', stockPrice: null},
+   {key: '1', stockPrice: 100},
    {key: '2', stockPrice: null},
    {key: '3', stockPrice: null},
    {key: '4', stockPrice: null},
