@@ -5,7 +5,7 @@ import { StyleSheet, View, Text, Button, TextInput } from 'react-native';
 class ScreenTwo extends Component {
  render() {
    return (
-     <View style={styles.container}>
+     <View style={styles.Container}>
         <TextInput style={{height: 40}}
           placeholder="Enter the stock price"
           onChangeText={(text) => this.setState({text})}/>
@@ -16,10 +16,10 @@ class ScreenTwo extends Component {
 };
 
 const styles = StyleSheet.create({
-  container: {
+  Container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   }
 });
 
