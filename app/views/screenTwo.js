@@ -11,7 +11,7 @@ class ScreenTwo extends Component {
  render() {
    return (
      <View style={styles.container}>
-        <TextField data={this.props.navigation.state.params.data.stockPrice}/>
+        <TextField data={this.props.navigation.state.params.data} />
      </View>
    );
  }
