@@ -11,21 +11,32 @@ class gridItem extends Component {
   render() {
     return (
       <View style={styles.GridViewBlockStyle}>
+       <View style={styles.GridMainContent}>
         <Text style={styles.GridViewInsideTextItemStyle}> {this.props.item.key} </Text>
-        <TouchableOpacity style={styles.GridViewOptions} onPress={() => this.props.navigation.navigate('ScreenTwo', {data: this.props.item})}>
-          <Text style={{color: '#fff'}}> {this.props.item.stockPrice ? 'Delete' : 'Add'} </Text>
+        <Text style={styles.GridPrice}> {this.props.item.stockPrice ? this.props.item.stockPrice : ''} </Text>
+       </View>
+       <View style={styles.GridViewOptions}>
+        <TouchableOpacity  onPress={() => this.props.navigation.navigate('ScreenTwo', {data: this.props.item})}>
+          <Text style={{color: '#fff', fontSize: 30}}> {this.props.item.stockPrice ? '-' : ''} </Text>
         </TouchableOpacity>
+        <TouchableOpacity  onPress={() => this.props.navigation.navigate('ScreenTwo', {data: this.props.item})}>
+          <Text style={{color: '#fff', fontSize: 30}}> + </Text>
+        </TouchableOpacity>
+       </View>
       </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
+GridMainContent: {
+  flexDirection: 'column',
+},
 GridViewBlockStyle: {
   justifyContent: 'center',
   flex:1,
   alignItems: 'center',
-  height: 100,
+  height: 110,
   margin: 5,
   backgroundColor: '#00BCD4'
 },
@@ -39,6 +50,13 @@ GridViewInsideTextItemStyle: {
  GridViewOptions: {
    justifyContent: 'flex-end',
    alignSelf: 'flex-end',
+   flexDirection: 'row',
+ },
+ GridPrice: {
+   fontSize: 20,
+   color: '#fff',
+   fontWeight: 'bold',
+   textAlign: 'center'
  }
 });
 
