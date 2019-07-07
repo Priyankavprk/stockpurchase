@@ -41,8 +41,10 @@ Spinner: {
 }
 });
 
-const mapDispatchToProps = {
-  getStockData
+const mapDispatchToProps = dispatch => {
+  return {
+    getStockData: () => dispatch(getStockData())
+  }
 }
 
 

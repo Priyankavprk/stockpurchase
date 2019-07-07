@@ -2,6 +2,9 @@
 import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, FlatList, Text, View, Alert, Platform, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
+import { updateData } from '../actions';
 
 class gridItem extends Component {
   static propTypes = {
@@ -13,10 +16,10 @@ class gridItem extends Component {
       <View style={styles.GridViewBlockStyle}>
        <View style={styles.GridMainContent}>
         <Text style={styles.GridViewInsideTextItemStyle}> {this.props.item.date.split('-')[2]} </Text>
-        <Text style={styles.GridPrice}> {this.props.item.price ? this.props.item.price : ''} </Text>
+        <Text style={styles.GridPrice}> {this.props.item.price !== 0 ? this.props.item.price : ''} </Text>
        </View>
        <View style={styles.GridViewOptions}>
-        <TouchableOpacity  onPress={() => this.props.navigation.navigate('ScreenTwo', {data: this.props.item})}>
+        <TouchableOpacity  onPress={() => this.props.updateData(this.props.item.id, 0)}>
           <Text style={{color: '#E2EAEA', fontSize: 30}}> {this.props.item.price ? '-' : ''} </Text>
         </TouchableOpacity>
         <TouchableOpacity  onPress={() => this.props.navigation.navigate('ScreenTwo', {data: this.props.item})}>
@@ -60,4 +63,14 @@ GridViewInsideTextItemStyle: {
  }
 });
 
-export default gridItem;
+const mapDispatchToProps = dispatch => {
+  return {
+    updateData: (id, price) => dispatch(updateData(id, price))
+  }
+}
+
+const mapStateToProps = state => ({
+
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(gridItem);

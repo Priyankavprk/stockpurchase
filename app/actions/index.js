@@ -1,4 +1,5 @@
-import { getData } from '../modules';
+import { Alert } from 'react-native';
+
 import config from '../config';
 
 var Airtable = require('airtable');
@@ -33,14 +34,22 @@ const loadData = (records) => async (dispatch) => {
     }
 };
 
-export function updateData() {
-  base('stockbydate').update("reclVAt1C6UI63GLg", {
-    "price": 10009
-  }, function(err, record) {
-  if (err) {
-    console.error(err);
-    return;
-  }
-  console.log(record.get('date'));
-});
-}
+export const updateData = (id, price) => async (dispatch) => {
+    try {
+        await base('stockbydate').update(id, {
+          "price": price
+        }, function(err, record) {
+        if (err) {
+          console.error(err);
+          Alert.alert('Failed to save stock price');
+          return;
+        }
+        Alert.alert('Stock price have been saved');
+        dispatch(getStockData())
+        console.log(record.get('date'));
+      });
+    } catch (err) {
+        Alert.alert('Failed to save stock price');
+        console.log('error', err);
+    }
+};

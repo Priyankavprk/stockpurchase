@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 class Graph extends Component {
 
     render() {
-        const data = this.props.items.filter((data) => data.price).map((d) => d.price)
+        const data = this.props.items.filter((data) => data.price !== 0).map((d) => d.price)
 
         return (
 
