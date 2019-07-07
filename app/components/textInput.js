@@ -2,10 +2,14 @@
 import React, {Component} from 'react';
 import { StyleSheet, View, Text, Button, TextInput } from 'react-native';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { updateData } from '../actions';
 
 class TextField extends Component {
+ static propTypes = {
+  data: PropTypes.Object
+ }
  render() {
    return (
      <View style={styles.Container}>
@@ -42,7 +46,7 @@ const mapDispatchToProps = dispatch => {
 
 
 const mapStateToProps = state => ({
-  
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TextField);

@@ -2,14 +2,14 @@
 import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, FlatList, Text, View, Alert, Platform } from 'react-native';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import GridItem from './gridItem';
 
 class gridView extends Component {
-  constructor(props) {
-    super(props);
+  static propTypes = {
+    item: PropTypes.array
   }
-
   render() {
     return (
       <View style={styles.MainContainer}>
