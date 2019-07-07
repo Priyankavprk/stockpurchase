@@ -10,7 +10,7 @@ class TextField extends Component {
           textAlign={'center'}
           style={styles.TextField}
           placeholder="Enter the stock price"
-          value={this.props.data ? this.props.data.toString() : null}
+          defaultValue={this.props.data ? this.props.data.toString() : null}
           onChangeText={(text) => this.setState({text})}/>
         <Button title='Save' onPress={() => this.props.saveStockValue(text)}/>
      </View>
