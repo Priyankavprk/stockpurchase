@@ -12,7 +12,7 @@ class TextField extends Component {
           placeholder="Enter the stock price"
           defaultValue={this.props.data ? this.props.data.toString() : null}
           onChangeText={(text) => this.setState({text})}/>
-        <Button title='Save' onPress={() => this.props.saveStockValue(text)}/>
+        <Button title='Save' onPress={() => this.props.saveStockValue(parseInt(text))}/>
      </View>
    );
  }
