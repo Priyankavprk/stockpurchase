@@ -1,15 +1,11 @@
 
 import React, {Component} from 'react';
-import { StyleSheet, View, Text, Button, TextInput } from 'react-native';
+import { StyleSheet, View, Text, Button, TextInput, Keyboard } from 'react-native';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 
 import { updateData } from '../actions';
 
 class TextField extends Component {
- static propTypes = {
-  data: PropTypes.Object
- }
  render() {
    return (
      <View style={styles.Container}>
@@ -19,7 +15,7 @@ class TextField extends Component {
           placeholder="Enter the stock price"
           defaultValue={this.props.data.price ? this.props.data.price.toString() : null}
           onChangeText={(text) => this.setState({text})}/>
-        <Button title='Save' onPress={() => this.props.updateData(this.props.data.id, parseInt(this.state.text))}/>
+        <Button title='Save' onPress={() => {this.props.updateData(this.props.data.id, parseInt(this.state.text)); Keyboard.dismiss()}}/>
      </View>
    );
  }
