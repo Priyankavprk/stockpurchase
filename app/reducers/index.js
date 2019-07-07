@@ -36,11 +36,14 @@ const initialState = {
 
 export default function reducer (state = initialState, action) {
   switch (action.type) {
-    case 'LOAD_STOCK_DATA':
+    case 'LOAD_STOCK_DATA': {
+      console.log(';;;;;;d;d;d;d;',action)
       return {
         ...state,
         stockData: action.items
       }
+    }
+
     default:
       return state;
   }
