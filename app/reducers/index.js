@@ -30,9 +30,21 @@ const initialState = {
    {key: '28', stockPrice: null},
    {key: '29', stockPrice: null},
    {key: '30', stockPrice: null}
- ]
+  ],
+  stockData: [],
 }
 
 export default function reducer (state = initialState, action) {
-  return state;
+  switch (action.type) {
+    case 'LOAD_STOCK_DATA': {
+      console.log(';;;;;;d;d;d;d;',action)
+      return {
+        ...state,
+        stockData: action.items
+      }
+    }
+
+    default:
+      return state;
+  }
 }
