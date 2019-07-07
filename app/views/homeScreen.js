@@ -26,7 +26,7 @@ class HomeScreen extends Component {
    }
    return (
       <ScrollView>
-        <GridView navigation={this.props.navigation} stockData={this.props.stockData}/>
+        <GridView navigation={this.props.navigation} />
         <Graph />
       </ScrollView>
    );

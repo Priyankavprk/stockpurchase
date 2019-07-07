@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = state => ({
-  items: state.items
+  items: state.stockData
 });
 
 export default connect(mapStateToProps)(gridView);
