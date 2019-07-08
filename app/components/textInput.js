@@ -18,7 +18,7 @@ validatePrice() {
     this.props.updateData(this.props.data.id, parseInt(this.state.number));
     Keyboard.dismiss()
   } else {
-    Alert.alert('Stock value should not be negative');
+    Alert.alert('Stock value should not be negative!');
   }
 }
 
