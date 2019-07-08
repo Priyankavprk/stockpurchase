@@ -6,6 +6,7 @@
 1. Start any emulator from Android Studio by navigating to Tools > AVD Manager
 1. Clone this repo by running git clone <url-to-repo>
 1. In a terminal, change directory to the just cloned code
+1. Add the airtable api key in config file (js/app/config)
 1. run the following
    ```bash
    npm install
