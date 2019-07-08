@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 
 import GridView from '../components/gridView';
 import Graph from '../components/graph';
+import ProfitView from '../components/profitView';
 import { getStockData } from '../actions';
 
 class HomeScreen extends Component {
@@ -27,6 +28,9 @@ class HomeScreen extends Component {
    return (
       <ScrollView>
         <GridView navigation={this.props.navigation} />
+        {this.props.stockData.filter((data) => data.price !== 0).map((d) => d.price).length > 1 &&
+           <ProfitView />
+        }
         <Graph />
       </ScrollView>
    );
