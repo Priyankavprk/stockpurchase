@@ -1,6 +1,9 @@
 
 import React, {Component} from 'react';
-import { StyleSheet, View, Text, Button, TextInput } from 'react-native';
+import { StyleSheet, View, Text, Button, TextInput, Keyboard } from 'react-native';
+import { connect } from 'react-redux';
+
+import { updateData } from '../actions';
 
 class TextField extends Component {
  render() {
@@ -10,9 +13,9 @@ class TextField extends Component {
           textAlign={'center'}
           style={styles.TextField}
           placeholder="Enter the stock price"
-          defaultValue={this.props.data ? this.props.data.toString() : null}
+          defaultValue={this.props.data.price ? this.props.data.price.toString() : null}
           onChangeText={(text) => this.setState({text})}/>
-        <Button title='Save' onPress={() => this.props.saveStockValue(parseInt(text))}/>
+        <Button title='Save' onPress={() => {this.props.updateData(this.props.data.id, parseInt(this.state.text)); Keyboard.dismiss()}}/>
      </View>
    );
  }
@@ -31,4 +34,15 @@ const styles = StyleSheet.create({
   }
 });
 
-export default TextField;
+const mapDispatchToProps = dispatch => {
+  return {
+    updateData: (id, price) => dispatch(updateData(id, price))
+  }
+}
+
+
+const mapStateToProps = state => ({
+
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(TextField);
