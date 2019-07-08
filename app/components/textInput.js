@@ -1,11 +1,27 @@
 
 import React, {Component} from 'react';
-import { StyleSheet, View, Text, Button, TextInput, Keyboard } from 'react-native';
+import { StyleSheet, View, Text, Button, TextInput, Keyboard, Alert } from 'react-native';
 import { connect } from 'react-redux';
 
 import { updateData } from '../actions';
 
 class TextField extends Component {
+ constructor(props){
+   super(props);
+   this.state = {
+     number: ''
+   }
+ }
+
+validatePrice() {
+  if (parseInt(this.state.number) > 0) {
+    this.props.updateData(this.props.data.id, parseInt(this.state.number));
+    Keyboard.dismiss()
+  } else {
+    Alert.alert('Stock value should not be negative');
+  }
+}
+
  render() {
    return (
      <View style={styles.Container}>
@@ -14,8 +30,8 @@ class TextField extends Component {
           style={styles.TextField}
           placeholder="Enter the stock price"
           defaultValue={this.props.data.price ? this.props.data.price.toString() : null}
-          onChangeText={(text) => this.setState({text})}/>
-        <Button title='Save' onPress={() => {this.props.updateData(this.props.data.id, parseInt(this.state.text)); Keyboard.dismiss()}}/>
+          onChangeText={(number) => this.setState({number})}/>
+        <Button title='Save' onPress={() => this.validatePrice()}/>
      </View>
    );
  }
