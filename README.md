@@ -1,4 +1,4 @@
-## RigbotMobile
+## Stock Purchase
 
 ## Getting Started
 1. Install [NodeJS](https://nodejs.org/en/download/)
